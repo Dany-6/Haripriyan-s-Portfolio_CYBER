@@ -12,10 +12,10 @@ const timeDisplay  = document.getElementById('current-time');
 // ─── Profile Data ──────────────────────────────────────────────
 const PROFILE = {
     name: "Haripriyan B A",
-    title: "Cybersecurity Intern & Full-Stack Developer",
+    title: "Cybersecurity Intern",
     college: "Sri Ramakrishna College of Arts and Science",
-    location: "India",
-    bio: "Results-driven Cybersecurity Intern and Full-Stack Developer with hands-on experience in network defence, digital forensics, and secure application development.",
+    location: "Coimbatore, Tamil Nadu",
+    bio: "Enthusiastic Cybersecurity undergraduate with hands-on experience in network security, digital forensics, penetration testing, and Python development. Skilled in security analysis using industry-standard tools including Kali Linux, Wireshark, Nmap, Burp Suite, and Metasploit. Passionate about solving real-world security challenges through projects and Capture The Flag competitions while continuously expanding technical expertise. Eager to contribute to a cybersecurity-focused organization with a strong learning mindset and analytical approach.",
     linkedin: "https://www.linkedin.com/in/haripriyan-b-a-5a98a7315",
     github: "https://github.com/Dany-6",
     email: "baharipriyan788@gmail.com"
@@ -23,43 +23,53 @@ const PROFILE = {
 
 const PROJECTS = [
     {
-        name: "ChainRaptor",
-        lang: "Python",
-        stars: 1,
-        desc: "Autonomous AI-powered cybersecurity platform & MCP agent for offensive security orchestration. Native terminal chat UI, automated tool execution, local (Ollama) & cloud LLM support.",
-        url: "https://github.com/Dany-6/ChainRaptor"
-    },
-    {
         name: "PyroWall",
         lang: "Python",
         stars: 2,
-        desc: "A fully functional stateful packet-filtering firewall built in pure Python. Features rule management, connection tracking, and real-time logging.",
+        desc: "A Python-based stateful firewall using socket programming and TCP/IP networking.",
         url: "https://github.com/Dany-6/pyrowall"
+    },
+    {
+        name: "Phalanx Check",
+        lang: "Python",
+        stars: 0,
+        desc: "A phishing simulation platform with ethical safeguards and audit logging.",
+        url: "https://github.com/Dany-6"
+    },
+    {
+        name: "ChainRaptor",
+        lang: "Python",
+        stars: 1,
+        desc: "An AI-assisted penetration testing framework integrating LLM capabilities.",
+        url: "https://github.com/Dany-6/ChainRaptor"
     },
     {
         name: "Project IronLog",
         lang: "Go",
         stars: 1,
-        desc: "Cryptographically verifiable file & log integrity monitor for high-security enterprises. Combines eBPF, off-chain IPFS, HSM signing, and permissioned blockchain.",
+        desc: "A file integrity monitoring solution using eBPF, blockchain, and cryptographic verification.",
         url: "https://github.com/Dany-6/Project-IronLog"
     }
 ];
 
 const SKILLS = [
     { name: "Python",               pct: 90, cat: "lang" },
-    { name: "JavaScript / Node.js", pct: 80, cat: "lang" },
+    { name: "SQL",                  pct: 75, cat: "lang" },
+    { name: "C / C++",              pct: 70, cat: "lang" },
     { name: "Go",                   pct: 65, cat: "lang" },
-    { name: "HTML / CSS",           pct: 85, cat: "lang" },
+    { name: "JavaScript / HTML",    pct: 80, cat: "lang" },
     { name: "Network Security",     pct: 88, cat: "sec"  },
     { name: "Penetration Testing",  pct: 82, cat: "sec"  },
     { name: "Digital Forensics",    pct: 78, cat: "sec"  },
     { name: "Firewall / IDS",       pct: 85, cat: "sec"  },
+    { name: "Phishing Simulation",  pct: 75, cat: "sec"  },
     { name: "Adobe Photoshop",      pct: 85, cat: "design" },
-    { name: "Adobe Premiere Pro",   pct: 85, cat: "design" },
-    { name: "Linux Administration", pct: 80, cat: "tool" },
-    { name: "Docker / DevOps",      pct: 70, cat: "tool" },
-    { name: "Git / GitHub",         pct: 88, cat: "tool" },
-    { name: "React / Next.js",      pct: 72, cat: "tool" }
+    { name: "Adobe Illustrator",    pct: 80, cat: "design" },
+    { name: "Kali Linux / Arch",    pct: 85, cat: "tool" },
+    { name: "Wireshark / Nmap",     pct: 85, cat: "tool" },
+    { name: "Metasploit",           pct: 80, cat: "tool" },
+    { name: "Burp Suite",           pct: 75, cat: "tool" },
+    { name: "Git / GitHub",         pct: 88, cat: "tool" }
 ];
 
 const ASCII_LOGO = `
@@ -203,9 +213,11 @@ function cmdHelp() {
     appendLine(`<span class="section-title">▸ AVAILABLE COMMANDS</span>`);
     const cmds = [
         ['about',     'Who am I — bio, role, and background'],
+        ['experience','Professional experience and internships'],
         ['skills',    'Technical skills with proficiency levels'],
         ['projects',  'Featured GitHub repositories'],
         ['education', 'Academic background'],
+        ['certs',     'Certifications and awards'],
         ['contact',   'LinkedIn, GitHub, and email'],
         ['resume',    'Download / view my resume'],
         ['whoami',    'Display current user information'],
@@ -308,14 +320,50 @@ function cmdContact() {
 function cmdEducation() {
     appendLine(`<span class="section-title">▸ EDUCATION</span>`);
     appendLine('');
-    appendLine(`  <span class="highlight">🎓 ${PROFILE.college}</span>`);
-    appendLine(`  <span class="dim">   Pursuing studies in Computer Science / Cybersecurity</span>`);
+    appendLine(`  <span class="highlight">🎓 Sri Ramakrishna College of Arts and Science (SRCAS), Coimbatore</span>`);
+    appendLine(`  <span class="dim">   Bachelor of Science in Computer Science with Cyber Security</span>`);
+    appendLine(`  <span class="dim">   CGPA: 7.1 | 2024 – 2027</span>`);
     appendLine('');
-    appendLine(`  <span class="info-label">Focus Areas:</span>`);
-    appendLine(`     • Network Defence & Digital Forensics`);
-    appendLine(`     • Secure Application Development`);
-    appendLine(`     • Full-Stack Web Development`);
-    appendLine(`     • AI/ML Integration for Security`);
+    appendLine(`  <span class="highlight">🎓 Murugu Matric Higher Secondary School, Tiruppur</span>`);
+    appendLine(`  <span class="dim">   XII Higher Secondary (State Board), 88% | 2024</span>`);
+    appendLine('');
+    appendLine(`  <span class="highlight">🎓 Malayapalayam Government Higher Secondary School, Erode</span>`);
+    appendLine(`  <span class="dim">   X Secondary School (State Board), 60.2% | 2022</span>`);
+    appendLine('');
+}
+
+function cmdExperience() {
+    appendLine(`<span class="section-title">▸ EXPERIENCE</span>`);
+    appendLine('');
+    appendLine(`  <span class="highlight">💼 Cybersecurity Intern</span> <span class="dim">| PREFENZO Technologies, Coimbatore (May 2026 – June 2026)</span>`);
+    appendLine(`     • Assisted in strengthening network security and defensive architecture initiatives.`);
+    appendLine(`     • Performed packet analysis and monitored network traffic to identify potential vulnerabilities.`);
+    appendLine(`     • Supported vulnerability assessment activities using industry-standard cybersecurity tools.`);
+    appendLine(`     • Collaborated with security professionals to document findings and prepare security reports.`);
+    appendLine(`     • Assisted in implementing security best practices on Linux-based systems.`);
+    appendLine('');
+    appendLine(`  <span class="highlight">💼 Project Contributor</span> <span class="dim">| Academic Cybersecurity Projects (2025 – Present)</span>`);
+    appendLine(`     • Applied Python programming to automate cybersecurity workflows.`);
+    appendLine(`     • Implemented secure coding practices across multiple security-focused applications.`);
+    appendLine(`     • Practiced real-world attack simulation within ethical security boundaries.`);
+    appendLine(`     • Applied multiple security technologies including AI, blockchain, eBPF, networking, and cryptography.`);
+    appendLine('');
+}
+
+function cmdCerts() {
+    appendLine(`<span class="section-title">▸ CERTIFICATIONS & AWARDS</span>`);
+    appendLine('');
+    appendLine(`  <span class="highlight">Certifications:</span>`);
+    appendLine(`     • Google Career Certificate – Foundations of Cybersecurity (May 2026)`);
+    appendLine(`     • Google Career Certificate – Play It Safe: Manage Security Risks (May 2026)`);
+    appendLine(`     • Google Career Certificate – Connect and Protect: Networks and Network Security (May 2026)`);
+    appendLine(`     • Security Blue Team – Introduction to PowerShell (June 2025)`);
+    appendLine(`     • Security Blue Team – Introduction to Penetration Testing (May 2025)`);
+    appendLine('');
+    appendLine(`  <span class="highlight">Awards & Accomplishments:</span>`);
+    appendLine(`     • Completed practical coursework in network security, ethical hacking, and digital forensics.`);
+    appendLine(`     • Active participant in international CTF competitions including UMass CTF, Blue Hens CTF, and UDCTF.`);
+    appendLine(`     • Experience creating UI mock-ups and visual designs using Adobe Photoshop and Illustrator.`);
     appendLine('');
 }
 
@@ -369,18 +417,12 @@ function cmdResume() {
     appendLine('');
 
     // Download button
-    appendLine(`  <span class="dim">Click below to download as PDF:</span>`);
+    appendLine(`  <span class="dim">Click below to view or download the original PDF:</span>`);
     const btnWrapper = document.createElement('div');
     btnWrapper.className = 'line';
-    btnWrapper.innerHTML = `<button id="download-resume-btn" class="resume-download-btn">⬇  Download Resume PDF</button>`;
+    btnWrapper.innerHTML = `<a href="Haripriyan%20B%20A.pdf" target="_blank" class="resume-download-btn" style="text-decoration:none; display:inline-block; margin-top:10px;">⬇  Open Resume PDF</a>`;
     outputArea.appendChild(btnWrapper);
     appendLine('');
-
-    // Attach click handler
-    setTimeout(() => {
-        const btn = document.getElementById('download-resume-btn');
-        if (btn) btn.addEventListener('click', generateResumePDF);
-    }, 100);
 }
 
 // ─── PDF Generation (uses jsPDF from CDN) ──────────────────────
@@ -573,10 +615,12 @@ function cmdExit() {
 const COMMANDS = {
     help:      cmdHelp,
     about:     cmdAbout,
+    experience: cmdExperience,
     skills:    cmdSkills,
     projects:  cmdProjects,
     contact:   cmdContact,
     education: cmdEducation,
+    certs:     cmdCerts,
     resume:    cmdResume,
     whoami:    cmdWhoami,
     date:      cmdDate,
